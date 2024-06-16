@@ -1,18 +1,21 @@
 function updateClock() {
     const now = new Date();
     
-    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    const day = days[now.getDay()];
+    const days = ['Zondag', 'Maandag', 'Dinsdag', 'Woensdag', Donderdag', 'Vrijdag', 'Zaterdag'];
+    const months = [
+        'Januari', 'Februari', 'Maart', 'April', 'Mei', 'Juni',
+        'Juli', 'Augustus', 'September', 'Oktober', 'November', 'December'
+    ];
     
+    const day = days[now.getDay()];
     const date = now.getDate();
-    const month = String(now.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+    const month = months[now.getMonth()]; // Use month name
     const year = now.getFullYear();
-    const formattedDate = `${day} ${date}/${month}/${year}`;
+    const formattedDate = `${day} ${date} ${month} ${year}`;
     
     const hours = String(now.getHours()).padStart(2, '0');
     const minutes = String(now.getMinutes()).padStart(2, '0');
-    const seconds = String(now.getSeconds()).padStart(2, '0');
-    const currentTime = `${hours}:${minutes}:${seconds}`;
+    const currentTime = `${hours}:${minutes}`;
 
     document.getElementById('date').textContent = formattedDate;
     document.getElementById('time').textContent = currentTime;
