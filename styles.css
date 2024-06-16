@@ -1,5 +1,6 @@
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -10,5 +11,25 @@ body {
 }
 
 #clock {
-    font-size: 20em;
+    text-align: center;
+}
+
+#time {
+    font-size: 20em; /* Increased font size for better visibility */
+}
+
+#date {
+    font-size: 10em;
+    margin-top: 10px;
+}
+
+#fullscreen-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #61dafb;
+    border: none;
+    border-radius: 5px;
+    color: #282c34;
 }
